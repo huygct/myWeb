@@ -1,0 +1,29 @@
+<div>
+
+  <div class="md-padding">
+    <p>Please choose your level to study by effort english</p>
+
+    <md-select placeholder="Choose level to study" ng-model="effortEnglishCtrl.effortEnglish.subjectWasSelected">
+      <md-option ng-repeat="subject in effortEnglishCtrl.effortEnglish.subjects"
+                 ng-value="subject">{{subject.nameSubject}}
+      </md-option>
+    </md-select>
+
+    <div ng-repeat="lesson in effortEnglishCtrl.effortEnglish.subjectWasSelected.lessons | orderBy: 'id'">
+      <a ng-click="effortEnglishCtrl.clickNameLesson(lesson)">{{lesson.nameLesson}}</a>
+      <div ng-repeat="lessonDetail in lesson.lessonsDetails" ng-show="lesson.showDetail">
+        <p ng-click="effortEnglishCtrl.setUrl(lessonDetail)">{{lessonDetail.name}}.{{lessonDetail.type}}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div ng-if="effortEnglishCtrl.effortEnglish.urlPdf !== ''">
+    <embed src="{{effortEnglishCtrl.urlPdf}}" width="auto" height="auto">jbjb
+  </div>
+
+  <audio controls autoplay loop class="htl-effort-english-audio-tab" src="{{effortEnglishCtrl.effortEnglish.urlAudio}}" controls>
+    <p>If you are reading this, it is because your browser does not support the audio element.</p>
+  </audio>
+    <!--<img src="images/48.jpg" alt="Mountain View" style="width:304px;height:228px;">-->
+</div>
