@@ -18,6 +18,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/protected/user")
 public class UserController {
+    /*
+    API
+    /protected/user/userList
+     */
+
     @Autowired
     private UserService userService;
 
