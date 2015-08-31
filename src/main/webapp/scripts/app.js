@@ -8,16 +8,24 @@
  *
  * Main module of the application.
  */
+
+angular.module('htsApp', [
+  'htl.com.reusableComponents',
+  'UIBootstrapApp'
+
+]);
+
 angular
   .module('happyToStudyApp', [
     'ngAnimate',
+    'ui.bootstrap',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
     'ngMaterial',
-    'htl.com.reusableComponents'
+    'htsApp'
   ])
   .constant('HTL_CONSTANT', {
     'URL' : 'http://localhost',

@@ -5,7 +5,7 @@ angular
     $routeProvider
       .when('/demo', {
         templateUrl: 'scripts/_demo/getAudio/templates/getAudio.html',
-        controller: 'EnglishController',
-        controllerAs: 'englishCtrl'
+        controller: 'GetAudioController',
+        controllerAs: 'vm'
       })
   });
