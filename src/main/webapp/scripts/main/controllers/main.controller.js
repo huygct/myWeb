@@ -2,23 +2,29 @@
 
 (function () {
   angular.module('happyToStudyApp')
-    .controller('MainController', ['$scope', '$mdSidenav', 'mainService', function ($scope, $mdSidenav, mainService) {
-      var self = this;
+    .controller('MainController', ['$scope', '$mdSidenav', '$location', 'mainService',
+      function ($scope, $mdSidenav, $location, mainService) {
+        var self = this;
 
-      self.toggleSidenav = function (menuId) {
-        $mdSidenav(menuId).toggle();
-      };
+        self.toggleSidenav = function (menuId) {
+          $mdSidenav(menuId).toggle();
+        };
 
-      self.menuToggleOptions = {
+        //self.menuToggleOptions = {
+        //
+        //  menus: mainService.cache.menus,
+        //
+        //  externalScope: {
+        //
+        //  }
+        //};
 
-        menus: mainService.cache.menus,
+        self.groupMenus = mainService.cache.menus;
 
-        externalScope: {
-
-        }
-      }
-
-    }])
+        self.setUrl = function (url) {
+          console.log(url);
+        };
+      }])
 
 })();
     

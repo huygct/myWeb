@@ -191,6 +191,13 @@
             <version>1.1.1</version>
         </dependency>
 
+        <!--IOUtils class to get the byte array from image file-->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
