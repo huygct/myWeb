@@ -6,3 +6,22 @@
 .menu-side-left ul {
   padding: 0;
 }
+.accordion-menu .accordion-children .menuToggle-child-button {
+  display: block;
+  text-align: left;
+  padding-left: 16px;
+  text-transform: none;
+}
+.accordion-menu .menuToggle-parent-button {
+  position: relative;
+  display: block;
+  text-align: left;
+}
+.accordion-menu .menuToggle-selected {
+  background-color: #267ed5;
+}
+.accordion-menu .menuToggle-parent-button .menuToggle-icon-expand {
+  position: absolute;
+  right: 4px;
+  top: 12px;
+}

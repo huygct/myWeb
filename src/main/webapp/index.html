@@ -49,16 +49,25 @@
       <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
                   md-is-locked-open="$mdMedia('gt-sm')">
 
-        <accordion>
+        <accordion class="accordion-menu">
           <accordion-group is-open="group.showChildren" ng-repeat="group in mainCtrl.groupMenus">
             <accordion-heading>
-              <span ng-click="mainCtrl.setUrl(group.link)">
-                {{group.name}}
-                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': group.showChildren, 'glyphicon-chevron-right': !group.showChildren}"></i>
-              </span>
+              <md-button ng-click="mainCtrl.setUrl(group.link)" class="menuToggle-parent-button" ng-href="">
+                         <!--ng-class="{'menuToggle-selected' : mainCtrl.selected === menu.id}"-->
+                <div>
+                  <span>{{group.name}}</span>
+                  <i class="menuToggle-icon-expand pull-right glyphicon"
+                     ng-class="{'glyphicon-chevron-down': group.showChildren, 'glyphicon-chevron-right': !group.showChildren}">
+                  </i>
+                </div>
+              </md-button>
             </accordion-heading>
-            <div ng-repeat="child in group.children">
-              <a href="{{child.link}}">{{child.name}}</a>
+            <div ng-repeat="child in group.children" class="accordion-children">
+              <md-button ng-href="{{child.link}}" class="menuToggle-child-button"
+                         ng-click="menuToggleCtrl.clickChildrenButton(child)">
+                         <!--ng-class="{'menuToggle-selected' : menuToggleCtrl.selected === child.id}"-->
+                <span class="menuToggle-child-name">{{child.name}}</span>
+              </md-button>
             </div>
           </accordion-group>
         </accordion>
