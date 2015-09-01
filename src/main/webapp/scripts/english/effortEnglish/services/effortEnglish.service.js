@@ -5,7 +5,7 @@
 'use strict';
 
 (function () {
-  angular.module('happyToStudyApp')
+  angular.module('EnglishApp')
     .service('effortEnglishService', ['$q', '$http', 'HTL_CONSTANT', function ($q, $http, HTL_CONSTANT) {
       var self = this;
 
@@ -16,7 +16,8 @@
         subjects: {},
         subjectWasSelected: {},
         urlPdf: '',
-        urlAudio: ''
+        urlAudio: '',
+        showPdf: true
       };
 
       function start () {

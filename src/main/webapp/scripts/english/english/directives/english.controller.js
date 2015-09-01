@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  angular.module('happyToStudyApp')
+  angular.module('EnglishApp')
     .controller('EnglishController', [ function () {
       var self = this;
 

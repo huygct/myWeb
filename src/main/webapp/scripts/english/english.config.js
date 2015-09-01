@@ -1,18 +1,18 @@
 (function () {
   'use strict';
   angular
-    .module('UIBootstrapApp', [])
+    .module('EnglishApp', [])
 
     .config(function ($routeProvider) {
       $routeProvider
         .when('/english', {
-          templateUrl: 'scripts/_demo/UIBootstrap/templates/uiBootstrap.html',
-          controller: 'UIBootstrapController',
-          controllerAs: 'vm'
+          templateUrl: 'scripts/english/english/templates/english.html'
+          //controller: 'EnglishController',
+          //controllerAs: 'vm'
         })
         .when('/english/:typeEnglish', {
-          templateUrl: 'scripts/_demo/UIBootstrap/urlRouter.html',
-          controller: 'UIBootstrapRouterController',
+          templateUrl: 'scripts/english/english/templates/urlRouter.html',
+          controller: 'EnglishRouterController',
           controllerAs: 'vm'
         })
     });

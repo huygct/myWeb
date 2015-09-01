@@ -11,7 +11,8 @@
 
 angular.module('htsApp', [
   'htl.com.reusableComponents',
-  'UIBootstrapApp'
+  'UIBootstrapApp',
+  'EnglishApp'
 
 ]);
 
