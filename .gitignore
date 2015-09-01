@@ -6,5 +6,6 @@
 **/bower_components
 /.idea
 **/.idea
+**/.idea/**
 /target
 **/sources
