@@ -1,5 +1,5 @@
 .DS_Store
-context.xml
+/src/main/resources/META-INF/tomcat/conf/context.xml
 /node_modules
 **/node_modules
 /bower_components
