@@ -10,12 +10,10 @@
       vm.getLessonsFormId = getLessonsFormId;
 
       vm.effortEnglish = effortEnglishService.cache;
-      console.log('=========== ', vm.effortEnglish);
 
       effortEnglishService.getSubjects()
         .then(function () {
           vm.effortEnglish.subjects = effortEnglishService.cache.subjects;
-          console.log(vm.effortEnglish.subjects);
         }, function () {
           throw (Error('Error get subject from server'));
         }) ;
@@ -35,12 +33,12 @@
 
       function setUrl (lessonDetail) {
         if (lessonDetail.type === 'mp3') {
-          vm.effortEnglish.urlAudio = lessonDetail.url;
+          vm.effortEnglish.urlAudio = "http://localhost:8080/happyToStudy/main/lessons/getAudio?urlAudio=" + lessonDetail.url;
           vm.effortEnglish.showPdf = true;
         } else {
           if (lessonDetail.type === 'pdf') {
             vm.effortEnglish.showPdf = !vm.effortEnglish.showPdf;
-            vm.effortEnglish.urlPdf = lessonDetail.url;
+            vm.effortEnglish.urlPdf = "http://localhost:8080/happyToStudy/main/lessons/getPdf?urlPdf=" + lessonDetail.url;
           }
         }
       }

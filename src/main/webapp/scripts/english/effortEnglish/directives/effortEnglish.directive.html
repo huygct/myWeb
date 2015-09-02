@@ -27,19 +27,15 @@
   </div>
 
 
-  <div collapse="vm.effortEnglish.showPdf">
-    <div class="well well-lg">
-      Some content
-      <embed src="{{vm.effortEnglish.urlPdf}}" width="auto" height="auto">
-      <md-button class="md-raised md-primary" ng-click="vm.closePdf()">Close Pdf</md-button>
+  <div collapse="vm.effortEnglish.showPdf" class="htl-wrapper-show-pdf">
+    <div class="well well-lg" ng-if="vm.effortEnglish.urlPdf !== ''">
+      <embed src="{{vm.effortEnglish.urlPdf}}" class="htl-show-pdf" width="auto" height="auto">
+      <md-button class="md-raised md-primary htl-button-close-pdf" ng-click="vm.closePdf()">Close Pdf</md-button>
     </div>
   </div>
 
-  <!--<div ng-if="vm.effortEnglish.urlPdf !== ''">-->
-    <!--<embed src="{{vm.urlPdf}}" width="auto" height="auto">-->
-  <!--</div>-->
-
-  <audio controls autoplay loop class="htl-effort-english-audio-tab" src="{{vm.effortEnglish.urlAudio}}" controls>
+  <audio controls autoplay loop class="htl-effort-english-audio-tab"
+         src="{{vm.effortEnglish.urlAudio}}" controls>
     <p>If you are reading this, it is because your browser does not support the audio element.</p>
   </audio>
   <!--<img src="images/48.jpg" alt="Mountain View" style="width:304px;height:228px;">-->

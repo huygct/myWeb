@@ -1,4 +1,4 @@
-package com.huyvn.happytostudy.controllers;
+package com.huyvn.happytostudy.controllers.english;
 
 import com.huyvn.happytostudy.model.Subjects;
 import com.huyvn.happytostudy.services.SubjectsService;

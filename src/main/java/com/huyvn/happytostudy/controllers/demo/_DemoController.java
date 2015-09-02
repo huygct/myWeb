@@ -1,4 +1,4 @@
-package com.huyvn.happytostudy.controllers;
+package com.huyvn.happytostudy.controllers.demo;
 
 import org.apache.commons.io.IOUtils;
 import org.springframework.core.io.InputStreamResource;
@@ -38,7 +38,7 @@ public class _DemoController {
     @RequestMapping(value = "/getAudio", method = RequestMethod.GET)
     @ResponseBody
     public void getAudio( ServletResponse response ) throws IOException{
-        File imageFile = new File( "E:\\My Music\\Nhac Chuong\\Sinbad.mp3" );
+        File imageFile = new File( "sources/OriginalEnglish/1.02 A Kiss/A Kiss Audio.mp3" );
         byte[] byteArray = IOUtils.toByteArray(new FileInputStream(imageFile));
         response.setContentType( "audio/mpeg" );
         response.getOutputStream().write( byteArray );
