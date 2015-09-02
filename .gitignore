@@ -8,4 +8,5 @@
 **/.idea
 **/.idea/**
 /target
+/sources
 **/sources
