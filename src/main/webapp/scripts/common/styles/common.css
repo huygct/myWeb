@@ -3,3 +3,9 @@
   color: #fff;
   height: 32px;
 }
+.md-primary.md-raised.md-button.md-default-theme {
+  text-transform: none;
+}
+.md-primary.md-button.md-default-theme {
+  text-transform: none;
+}

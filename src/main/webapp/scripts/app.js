@@ -25,6 +25,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngMessages',
     'ngMaterial',
     'htsApp'
   ])

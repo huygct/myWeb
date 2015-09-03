@@ -6,6 +6,25 @@
 .menu-side-left ul {
   padding: 0;
 }
+.htl-header .htl-toolbar {
+  background-color: #106cc8;
+}
+.htl-header .htl-toolbar .htl-name-app {
+  text-align: left;
+}
+.htl-header .htl-toolbar .htl-menu-right-on-toolbar {
+  text-align: right;
+}
+.htl-header .htl-toolbar .htl-menu-right-on-toolbar .htl-button-option {
+  color: #fff;
+}
+.htl-header .htl-toolbar .htl-menu-right-on-toolbar .htl-button-account {
+  color: #fff;
+}
+.htl-header .htl-toolbar .htl-menu-right-on-toolbar .btn-group .dropdown-menu {
+  left: auto;
+  right: 0;
+}
 .accordion-menu .accordion-children .menuToggle-child-button {
   display: block;
   text-align: left;
@@ -24,4 +43,7 @@
   position: absolute;
   right: 4px;
   top: 12px;
+}
+.htl-menu-right-on-toolbar {
+  font-size: 14px;
 }
