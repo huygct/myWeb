@@ -11,9 +11,9 @@
           //controllerAs: 'vm'
         })
         .when('/english/:typeEnglish', {
-          templateUrl: 'scripts/english/english/templates/urlRouter.html',
-          controller: 'EnglishRouterController',
-          controllerAs: 'vm'
+          templateUrl: 'scripts/english/english/templates/english.html'
+          //controller: 'EnglishRouterController',
+          //controllerAs: 'vm'
         })
     });
 })();

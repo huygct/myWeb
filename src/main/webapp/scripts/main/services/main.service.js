@@ -42,6 +42,13 @@
 
       }
 
+      //self.chooseTab = chooseTab;
+      //function chooseTab (tab) {
+      //  var link = tab.link.replace('#', '');
+      //  //console.log('----------- ', link);
+      //  $location.path(link);
+      //}
+
       start();
 
     }])

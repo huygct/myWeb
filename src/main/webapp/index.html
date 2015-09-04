@@ -39,7 +39,8 @@
         <h1>Happy To Study</h1>
       </div>
       <div class="htl-menu-right-on-toolbar">
-        <md-button flex="50" class="md-primary htl-button-option" ng-click="mainCtrl.showGridBottomSheet($event)">Options
+        <md-button flex="50" class="md-primary htl-button-option" ng-click="mainCtrl.showGridBottomSheet($event)">
+          Options
         </md-button>
 
         <!-- Single button with keyboard nav -->
@@ -59,58 +60,58 @@
       </div>
     </section>
 
-    <section class="htl-tabs">
-      <tabset>
-        <tab ng-repeat="tab in mainCtrl.groupMenus" heading="{{tab.name}}" select="mainCtrl.chooseTab(tab)">
-          <tabset>
-            <tab ng-repeat="tabChild in tab.children" heading="{{tabChild.name}}" select="mainCtrl.chooseTab(tabChild)"
-                 active="false">
-            </tab>
-          </tabset>
-        </tab>
-      </tabset>
-      <br/>
+    <section class="htl-menu-toolbar">
+      <div class="htl-wrapper-menu-toolbar">
+        <nav class="htl-list-menu">
+          <ul>
+            <li ng-repeat="tab in mainCtrl.dataCache.menus" title="{{tab.name}}"
+                ng-class="{'tab-current' : tab.selected}">
+              <a href="#{{tab.link}}">{{tab.name}}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </section>
   </header>
 
   <section role="main" class="container main-body">
     <!--<div class="menu-side-left" layout="row" flex>-->
-      <!--<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left"-->
-                  <!--md-is-locked-open="$mdMedia('gt-sm')">-->
+    <!--<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left"-->
+    <!--md-is-locked-open="$mdMedia('gt-sm')">-->
 
-        <!--<accordion class="accordion-menu">-->
-          <!--<accordion-group is-open="group.showChildren" ng-repeat="group in mainCtrl.groupMenus">-->
-            <!--<accordion-heading>-->
-              <!--<md-button ng-click="mainCtrl.setUrl(group.link)" class="menuToggle-parent-button" ng-href="">-->
-                <!--&lt;!&ndash;ng-class="{'menuToggle-selected' : mainCtrl.selected === menu.id}"&ndash;&gt;-->
-                <!--<div>-->
-                  <!--<span>{{group.name}}</span>-->
-                  <!--<i class="menuToggle-icon-expand pull-right glyphicon"-->
-                     <!--ng-class="{'glyphicon-chevron-down': group.showChildren, 'glyphicon-chevron-right': !group.showChildren}">-->
-                  <!--</i>-->
-                <!--</div>-->
-              <!--</md-button>-->
-            <!--</accordion-heading>-->
-            <!--<div ng-repeat="child in group.children" class="accordion-children">-->
-              <!--<md-button ng-href="{{child.link}}" class="menuToggle-child-button"-->
-                         <!--ng-click="menuToggleCtrl.clickChildrenButton(child)">-->
-                <!--&lt;!&ndash;ng-class="{'menuToggle-selected' : menuToggleCtrl.selected === child.id}"&ndash;&gt;-->
-                <!--<span class="menuToggle-child-name">{{child.name}}</span>-->
-              <!--</md-button>-->
-            <!--</div>-->
-          <!--</accordion-group>-->
-        <!--</accordion>-->
+    <!--<accordion class="accordion-menu">-->
+    <!--<accordion-group is-open="group.showChildren" ng-repeat="group in mainCtrl.groupMenus">-->
+    <!--<accordion-heading>-->
+    <!--<md-button ng-click="mainCtrl.setUrl(group.link)" class="menuToggle-parent-button" ng-href="">-->
+    <!--&lt;!&ndash;ng-class="{'menuToggle-selected' : mainCtrl.selected === menu.id}"&ndash;&gt;-->
+    <!--<div>-->
+    <!--<span>{{group.name}}</span>-->
+    <!--<i class="menuToggle-icon-expand pull-right glyphicon"-->
+    <!--ng-class="{'glyphicon-chevron-down': group.showChildren, 'glyphicon-chevron-right': !group.showChildren}">-->
+    <!--</i>-->
+    <!--</div>-->
+    <!--</md-button>-->
+    <!--</accordion-heading>-->
+    <!--<div ng-repeat="child in group.children" class="accordion-children">-->
+    <!--<md-button ng-href="{{child.link}}" class="menuToggle-child-button"-->
+    <!--ng-click="menuToggleCtrl.clickChildrenButton(child)">-->
+    <!--&lt;!&ndash;ng-class="{'menuToggle-selected' : menuToggleCtrl.selected === child.id}"&ndash;&gt;-->
+    <!--<span class="menuToggle-child-name">{{child.name}}</span>-->
+    <!--</md-button>-->
+    <!--</div>-->
+    <!--</accordion-group>-->
+    <!--</accordion>-->
 
-        <!--<menu-toggle menu-toggle-options="mainCtrl.menuToggleOptions"></menu-toggle>-->
+    <!--<menu-toggle menu-toggle-options="mainCtrl.menuToggleOptions"></menu-toggle>-->
 
-      <!--</md-sidenav>-->
-      <div layout="column" flex id="content">
-        <md-content layout="column" flex class="md-padding">
-          <div class="htl-container">
-            <div ng-view=""></div>
-          </div>
-        </md-content>
-      </div>
+    <!--</md-sidenav>-->
+    <div layout="column" flex id="content">
+      <md-content layout="column" flex class="md-padding">
+        <div class="htl-container">
+          <div ng-view=""></div>
+        </div>
+      </md-content>
+    </div>
     <!--</div>-->
   </section>
 
@@ -176,6 +177,8 @@
 <script src="scripts/english/effortEnglish/directives/effortEnglish.controller.js"></script>
 <script src="scripts/english/effortEnglish/directives/effortEnglish.directive.js"></script>
 <script src="scripts/english/effortEnglish/services/effortEnglish.service.js"></script>
+
+<script src="scripts/english/video/directives/videoEnglish.directive.js"></script>
 
 <script src="scripts/entertainment/entertainment/controllers/entertainment.controller.js"></script>
 

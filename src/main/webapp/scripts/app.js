@@ -42,11 +42,6 @@ angular
         controller: 'EnglishController',
         controllerAs: 'englishCtrl'
       })
-      .when('/english/effortEnglish', {
-        templateUrl: 'scripts/english/effortEnglish/templates/effortEnglish.html',
-        controller: 'EffortEnglishController',
-        controllerAs: 'effortEnglishCtrl'
-      })
       .when('/entertainment', {
         templateUrl: 'scripts/entertainment/entertainment/templates/entertainment.html',
         controller: 'EntertainmentController',
