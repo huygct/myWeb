@@ -1,0 +1,49 @@
+<md-bottom-sheet class="md-grid">
+  <md-list>
+    <md-list-item ng-repeat="item in items">
+
+      <md-button class="md-grid-item-content" ng-click="listItemClick($index)">
+        <!--<md-icon md-svg-src="{{item.icon}}"></md-icon>-->
+        <div class="md-grid-text"> {{ item.name }}</div>
+      </md-button>
+
+    </md-list-item>
+  </md-list>
+
+  <div class="htl-bottomSheet-add-vocabulary" ng-if="addVocabulary">
+    <md-toolbar class="md-primary">
+      <h1 class="md-toolbar-tools">
+        New Vocabulary Word
+      </h1>
+    </md-toolbar>
+
+    <md-content layout-padding="">
+      <form name="projectForm">
+        <md-input-container>
+          <label>New word</label>
+          <input md-maxlength="30" required="" name="description" ng-model="project.description">
+          <div ng-messages="projectForm.description.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="md-maxlength">The word has to be less than 30 characters long.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label>Mean of word</label>
+          <input required="" name="clientName" ng-model="project.clientName">
+          <div ng-messages="projectForm.clientName.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label>Make a sentence</label>
+          <textarea ng-model="sentence" name="sentence" md-maxlength="150"></textarea>
+          <div ng-messages="projectForm.sentence.$error">
+            <div ng-message="md-maxlength">$5,000 an hour? That's a little ridiculous. I doubt event Bill Clinton could afford that.</div>
+          </div>
+        </md-input-container>
+      </form>
+    </md-content>
+  </div>
+</md-bottom-sheet>

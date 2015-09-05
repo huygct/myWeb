@@ -25,6 +25,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngMessages',
     'ngMaterial',
     'htsApp'
   ])
@@ -40,11 +41,6 @@ angular
         templateUrl: 'scripts/english/english/templates/english.html',
         controller: 'EnglishController',
         controllerAs: 'englishCtrl'
-      })
-      .when('/english/effortEnglish', {
-        templateUrl: 'scripts/english/effortEnglish/templates/effortEnglish.html',
-        controller: 'EffortEnglishController',
-        controllerAs: 'effortEnglishCtrl'
       })
       .when('/entertainment', {
         templateUrl: 'scripts/entertainment/entertainment/templates/entertainment.html',

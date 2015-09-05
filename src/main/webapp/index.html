@@ -29,60 +29,90 @@
 <!-- Add your site or application content here -->
 <div id="wrapper">
 
-  <header class="header header-fixed">
-    <section class="htl-index-menu-main">menu-Main</section>
-    <section>
-      <md-toolbar layout="row">
-        <div class="md-toolbar-tools">
-          <md-button ng-click="mainCtrl.toggleSidenav('left')" hide-gt-sm class="md-icon-button">
-            <md-icon aria-label="Menu"
-                     md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+  <header class="htl-header header-fixed">
+    <section class="htl-index-menu-main">
+      menu-Main
+    </section>
+
+    <section class="htl-toolbar">
+      <div class="md-toolbar-tools htl-name-app">
+        <h1>Happy To Study</h1>
+      </div>
+      <div class="htl-menu-right-on-toolbar">
+        <md-button flex="50" class="md-primary htl-button-option" ng-click="mainCtrl.showGridBottomSheet($event)">
+          Options
+        </md-button>
+
+        <!-- Single button with keyboard nav -->
+        <div class="btn-group" dropdown keyboard-nav>
+          <md-button flex="50" class="md-primary htl-button-account" ng-click="" dropdown-toggle>
+            Your Account
+            <span class="caret"></span>
           </md-button>
-          <h1>Happy To Study</h1>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+            <li role="menuitem"><a href="#">Action</a></li>
+            <li role="menuitem"><a href="#">Another action</a></li>
+            <li role="menuitem"><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li role="menuitem"><a href="#">Separated link</a></li>
+          </ul>
         </div>
-      </md-toolbar>
+      </div>
+    </section>
+
+    <section class="htl-menu-toolbar">
+      <div class="htl-wrapper-menu-toolbar">
+        <nav class="htl-list-menu">
+          <ul>
+            <li ng-repeat="tab in mainCtrl.dataCache.menus" title="{{tab.name}}"
+                ng-class="{'tab-current' : tab.selected}">
+              <a href="#{{tab.link}}">{{tab.name}}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </section>
   </header>
 
   <section role="main" class="container main-body">
-    <div class="menu-side-left" layout="row" flex>
-      <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
-                  md-is-locked-open="$mdMedia('gt-sm')">
+    <!--<div class="menu-side-left" layout="row" flex>-->
+    <!--<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left"-->
+    <!--md-is-locked-open="$mdMedia('gt-sm')">-->
 
-        <accordion class="accordion-menu">
-          <accordion-group is-open="group.showChildren" ng-repeat="group in mainCtrl.groupMenus">
-            <accordion-heading>
-              <md-button ng-click="mainCtrl.setUrl(group.link)" class="menuToggle-parent-button" ng-href="">
-                         <!--ng-class="{'menuToggle-selected' : mainCtrl.selected === menu.id}"-->
-                <div>
-                  <span>{{group.name}}</span>
-                  <i class="menuToggle-icon-expand pull-right glyphicon"
-                     ng-class="{'glyphicon-chevron-down': group.showChildren, 'glyphicon-chevron-right': !group.showChildren}">
-                  </i>
-                </div>
-              </md-button>
-            </accordion-heading>
-            <div ng-repeat="child in group.children" class="accordion-children">
-              <md-button ng-href="{{child.link}}" class="menuToggle-child-button"
-                         ng-click="menuToggleCtrl.clickChildrenButton(child)">
-                         <!--ng-class="{'menuToggle-selected' : menuToggleCtrl.selected === child.id}"-->
-                <span class="menuToggle-child-name">{{child.name}}</span>
-              </md-button>
-            </div>
-          </accordion-group>
-        </accordion>
+    <!--<accordion class="accordion-menu">-->
+    <!--<accordion-group is-open="group.showChildren" ng-repeat="group in mainCtrl.groupMenus">-->
+    <!--<accordion-heading>-->
+    <!--<md-button ng-click="mainCtrl.setUrl(group.link)" class="menuToggle-parent-button" ng-href="">-->
+    <!--&lt;!&ndash;ng-class="{'menuToggle-selected' : mainCtrl.selected === menu.id}"&ndash;&gt;-->
+    <!--<div>-->
+    <!--<span>{{group.name}}</span>-->
+    <!--<i class="menuToggle-icon-expand pull-right glyphicon"-->
+    <!--ng-class="{'glyphicon-chevron-down': group.showChildren, 'glyphicon-chevron-right': !group.showChildren}">-->
+    <!--</i>-->
+    <!--</div>-->
+    <!--</md-button>-->
+    <!--</accordion-heading>-->
+    <!--<div ng-repeat="child in group.children" class="accordion-children">-->
+    <!--<md-button ng-href="{{child.link}}" class="menuToggle-child-button"-->
+    <!--ng-click="menuToggleCtrl.clickChildrenButton(child)">-->
+    <!--&lt;!&ndash;ng-class="{'menuToggle-selected' : menuToggleCtrl.selected === child.id}"&ndash;&gt;-->
+    <!--<span class="menuToggle-child-name">{{child.name}}</span>-->
+    <!--</md-button>-->
+    <!--</div>-->
+    <!--</accordion-group>-->
+    <!--</accordion>-->
 
-        <!--<menu-toggle menu-toggle-options="mainCtrl.menuToggleOptions"></menu-toggle>-->
+    <!--<menu-toggle menu-toggle-options="mainCtrl.menuToggleOptions"></menu-toggle>-->
 
-      </md-sidenav>
-      <div layout="column" flex id="content">
-        <md-content layout="column" flex class="md-padding">
-          <div class="htl-container">
-            <div ng-view=""></div>
-          </div>
-        </md-content>
-      </div>
+    <!--</md-sidenav>-->
+    <div layout="column" flex id="content">
+      <md-content layout="column" flex class="md-padding">
+        <div class="htl-container">
+          <div ng-view=""></div>
+        </div>
+      </md-content>
     </div>
+    <!--</div>-->
   </section>
 
   <!--<img src="images/48.jpg" alt="Mountain View" style="width:304px;height:228px;">-->
@@ -105,6 +135,7 @@
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
 <script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
 <script src="bower_components/angular-material/angular-material.js"></script>
 
 
@@ -135,6 +166,7 @@
 <!--main-->
 <script src="scripts/main/controllers/main.controller.js"></script>
 <script src="scripts/main/services/main.service.js"></script>
+<script src="scripts/main/controllers/gridBottomSheet.controller.js"></script>
 
 <!--english-->
 <script src="scripts/english/english.config.js"></script>
@@ -145,6 +177,8 @@
 <script src="scripts/english/effortEnglish/directives/effortEnglish.controller.js"></script>
 <script src="scripts/english/effortEnglish/directives/effortEnglish.directive.js"></script>
 <script src="scripts/english/effortEnglish/services/effortEnglish.service.js"></script>
+
+<script src="scripts/english/video/directives/videoEnglish.directive.js"></script>
 
 <script src="scripts/entertainment/entertainment/controllers/entertainment.controller.js"></script>
 
