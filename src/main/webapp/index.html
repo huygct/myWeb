@@ -8,6 +8,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
   <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css"/>
@@ -39,23 +40,29 @@
         <h1>Happy To Study</h1>
       </div>
       <div class="htl-menu-right-on-toolbar">
-        <md-button flex="50" class="md-primary htl-button-option" ng-click="mainCtrl.showGridBottomSheet($event)">
-          Options
-        </md-button>
-
-        <!-- Single button with keyboard nav -->
-        <div class="btn-group" dropdown keyboard-nav>
-          <md-button flex="50" class="md-primary htl-button-account" ng-click="" dropdown-toggle>
-            Your Account
-            <span class="caret"></span>
+        <div class="htl-option-and-account" ng-if="mainCtrl.wasLogin">
+          <md-button flex="50" class="md-primary htl-button-option" ng-click="mainCtrl.showGridBottomSheet($event)">
+            Options
           </md-button>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
-            <li role="menuitem"><a href="#">Action</a></li>
-            <li role="menuitem"><a href="#">Another action</a></li>
-            <li role="menuitem"><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li role="menuitem"><a href="#">Separated link</a></li>
-          </ul>
+          <!-- Single button with keyboard nav -->
+          <div class="btn-group" dropdown keyboard-nav>
+            <md-button flex="50" class="md-primary htl-button-account" ng-click="" dropdown-toggle>
+              Your Account
+              <span class="caret"></span>
+            </md-button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+              <li role="menuitem"><a href="#">Action</a></li>
+              <li role="menuitem"><a href="#">Another action</a></li>
+              <li role="menuitem"><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li role="menuitem"><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="htl-login" ng-if="!mainCtrl.wasLogin">
+          <md-button flex="50" class="md-primary htl-button-option" ng-click="mainCtrl.clickButtonLogin($event)">
+            Login
+          </md-button>
         </div>
       </div>
     </section>
@@ -70,6 +77,24 @@
             </li>
           </ul>
         </nav>
+        <!--menu with mini screen-->
+        <div layout="column" flex-sm="100" flex="33" layout-align="center center" class="htl-toolbar-menu-mini-screen">
+          <md-menu md-position-mode="target-right target" >
+            <md-button aria-label="Open demo menu" class="md-icon-button htl-icon-menu-toolbar" ng-click="$mdOpenMenu($event)">
+              <i class="fa fa-bars"></i>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item ng-repeat="item in [1, 2, 3]">
+                <md-button ng-click="ctrl.announceClick($index)">
+                  <div layout="row">
+                    <p flex>Option {{item}}</p>
+                    <md-icon md-menu-align-target md-svg-icon="call:portable-wifi-off" style="margin: auto 3px auto 0;"></md-icon>
+                  </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </div>
       </div>
     </section>
   </header>
@@ -138,6 +163,8 @@
 <script src="bower_components/angular-messages/angular-messages.js"></script>
 <script src="bower_components/angular-material/angular-material.js"></script>
 
+<script src="bower_components/i18next/i18next.js"></script>
+<script src="bower_components/ng-i18next/dist/ng-i18next.js"></script>
 
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
