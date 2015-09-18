@@ -25,7 +25,18 @@
   .htl-wrapper-menu-toolbar
     color white
     background-color #296293
+    .htl-toolbar-menu-mini-screen
+      height 40px
+      position relative
+      .htl-icon-menu-toolbar
+        position absolute
+        right 10px
+        top 0
+        margin 0
+        padding 0
+
     .htl-list-menu
+      display none
       ul
         margin 0 auto
         li
@@ -73,3 +84,24 @@
 
 .htl-menu-right-on-toolbar
   font-size 14px
+
+.md-grid.htl-bottomSheet
+  padding-left 0
+  padding-right 0
+
+.htl-bottomSheet-add-vocabulary
+  .htl-button-vocabulary
+    text-align right
+  .htl-title-add-vocabulary
+    padding 16px
+    font-size 16px
+    background-color rgb(63,81,181)
+    color white
+
+@media (min-width: 300px)
+  .htl-menu-toolbar
+    .htl-wrapper-menu-toolbar
+      .htl-list-menu
+        display block
+      .htl-toolbar-menu-mini-screen
+        display none

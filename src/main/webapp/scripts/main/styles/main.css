@@ -29,6 +29,20 @@
   color: #fff;
   background-color: #296293;
 }
+.htl-menu-toolbar .htl-wrapper-menu-toolbar .htl-toolbar-menu-mini-screen {
+  height: 40px;
+  position: relative;
+}
+.htl-menu-toolbar .htl-wrapper-menu-toolbar .htl-toolbar-menu-mini-screen .htl-icon-menu-toolbar {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+.htl-menu-toolbar .htl-wrapper-menu-toolbar .htl-list-menu {
+  display: none;
+}
 .htl-menu-toolbar .htl-wrapper-menu-toolbar .htl-list-menu ul {
   margin: 0 auto;
 }
@@ -76,4 +90,25 @@
 }
 .htl-menu-right-on-toolbar {
   font-size: 14px;
+}
+.md-grid.htl-bottomSheet {
+  padding-left: 0;
+  padding-right: 0;
+}
+.htl-bottomSheet-add-vocabulary .htl-button-vocabulary {
+  text-align: right;
+}
+.htl-bottomSheet-add-vocabulary .htl-title-add-vocabulary {
+  padding: 16px;
+  font-size: 16px;
+  background-color: #3f51b5;
+  color: #fff;
+}
+@media (min-width: 300px) {
+  .htl-menu-toolbar .htl-wrapper-menu-toolbar .htl-list-menu {
+    display: block;
+  }
+  .htl-menu-toolbar .htl-wrapper-menu-toolbar .htl-toolbar-menu-mini-screen {
+    display: none;
+  }
 }
